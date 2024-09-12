@@ -1,0 +1,115 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button, textarea, p, th, td, a
+{
+  margin: 0px;
+  padding: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a, p, h1, h2, h3 {
+    color:azure
+}
+    h1 {
+        font-size: 4rem;
+    }
+    
+
+/* Sidebar */
+
+    .sidebar {
+        padding: 3.5rem 3.5rem 1.5rem 3.5rem ;
+		background: #312450;
+		height: 100%;
+		left: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		position: fixed;
+		text-align: right;
+		top: 0;
+		width: 18em;
+		z-index: 10000;
+    }
+
+        .language {
+            text-align: left;
+        }
+            .language a {
+                color: rgba(240, 255, 255, 0.37);
+            }
+
+        .menu {
+            height: 70rem;
+            display: flex;
+            align-items: center;
+        }
+
+            .menu ul {
+                width: 100%;
+                list-style: none;
+            }
+
+            .menu li {
+                padding: 1rem;
+            }
+
+            .menu a {
+                font-size: 0.9em;
+                font-weight: bold;
+                letter-spacing: 0.25em;
+                line-height: 1.75;
+                outline: 0;
+                padding: 1.35em 0;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+/* Intro */
+
+    #intro {
+        margin-left: 25rem;
+        height: 100vh;
+    }
+
+        .intro-background {
+            position: fixed;
+            background-attachment: fixed;
+            background-image: url("assets/images/intro.jpg");
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+            filter:
+                sepia(100%)
+                saturate(1000%)
+                hue-rotate(245deg);
+        }
+
+        .intro-text {
+            padding-top: 40vh;
+            padding-left: 9rem;
+        }
+
+            .intro-text-blur {
+                backdrop-filter: blur(23px);
+                border-radius: 10px;
+                padding: 20px;
+                height: max-content;
+                width: max-content;
+            }
+                .intro-text h1 {
+                    margin-bottom: 2.4rem;
+                }
+                .intro-text p {
+                    font-size: 1.7rem;
+                    line-height: 3rem;
+                }
