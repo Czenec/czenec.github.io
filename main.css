@@ -18,6 +18,10 @@ body {
 a, p, h1, h2, h3 {
     color:azure
 }
+    a {
+        text-decoration: none;
+        border-bottom: 0.125rem dashed;
+    }
     h1 {
         font-size: 4rem;
     }
@@ -37,8 +41,8 @@ a, p, h1, h2, h3 {
         top: 0;
         width: 12vw;
         z-index: 10000;
+        min-width: 12rem;
     }
-
         .language {
             text-align: left;
         }
@@ -51,16 +55,13 @@ a, p, h1, h2, h3 {
             display: flex;
             align-items: center;
         }
-
             .menu ul {
                 width: 100%;
                 list-style: none;
             }
-
             .menu li {
                 padding: 1rem;
             }
-
             .menu a {
                 font-size: 0.9em;
                 font-weight: bold;
@@ -68,8 +69,10 @@ a, p, h1, h2, h3 {
                 line-height: 1.75;
                 outline: 0;
                 padding: 1.35em 0;
-                text-decoration: none;
                 text-transform: uppercase;
+                border-bottom: 0.125rem solid transparent;
+                border-image: linear-gradient(90deg, rgba(255, 255, 255, 0), rgb(187, 0, 255), rgb(187, 0, 255));
+                border-image-slice: 1;
             }
 
 
@@ -83,7 +86,6 @@ a, p, h1, h2, h3 {
         #intro {
             height: 100vh;
         }
-
             .intro-background {
                 position: fixed;
                 filter: sepia(100%) saturate(1000%) hue-rotate(245deg);
@@ -91,12 +93,10 @@ a, p, h1, h2, h3 {
                 height: 100vh;
                 width: 83vw;
             }
-
             .intro-text {
                 padding-top: 40vh;
                 padding-left: 9rem;
             }
-
                 .intro-text-blur {
                     backdrop-filter: blur(23px);
                     border-radius: 10px;
@@ -113,6 +113,47 @@ a, p, h1, h2, h3 {
                         color: rgba(255, 255, 255, 0.55);
                     }
                     .intro-text a {
-                        text-decoration: none;
                         color: rgba(255, 255, 255, 0.55);
                     }
+    
+    /*section 1*/
+        
+        #whoAmI {
+            height: 100vh;
+        }
+            .whoAmI-spacer {
+                height: 3vh;
+            }
+            .whoAmI-head {
+                backdrop-filter: blur(23px);
+                border-radius: 10px;
+                height: 24vh;
+                margin: 3vh;
+                margin-top: 0;
+            }
+                .whoAmI-head-title, .whoAmI-head-text {
+                    float: left;
+                    width: 40%;
+                    height: 100%;
+                    padding-left: 5%;
+                    padding-right: 5%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+            .whoAmI-content {
+                height: 67vh;
+                margin: 3vh;
+                border-radius: 10px;
+                position: relative;
+                background-image: linear-gradient(45deg, blueviolet, darkmagenta);
+            }
+    
+    /*Footer*/
+
+        #footer {
+            background-color: #493382;
+            height: 20vh;
+            position: relative;
+        }
