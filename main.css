@@ -30,7 +30,6 @@ a, p, h1, h2, h3 {
 /* Sidebar */
 
     .sidebar {
-        padding: 2.5vw 2.5vw 1vw 2.5vw;
         background: #312450;
         height: 100%;
         left: 0;
@@ -39,12 +38,14 @@ a, p, h1, h2, h3 {
         position: fixed;
         text-align: right;
         top: 0;
-        width: 12vw;
+        width: 17vw;
         z-index: 10000;
         min-width: 12rem;
     }
         .language {
             text-align: left;
+            margin-left: 3vw;
+            margin-top: 10%;
         }
             .language a {
                 color: rgba(240, 255, 255, 0.37);
@@ -56,7 +57,7 @@ a, p, h1, h2, h3 {
             align-items: center;
         }
             .menu ul {
-                width: 100%;
+                margin-left: 50%;
                 list-style: none;
             }
             .menu li {
