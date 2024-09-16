@@ -22,6 +22,9 @@ a, p, h1, h2, h3 {
         text-decoration: none;
         border-bottom: 0.125rem dashed;
     }
+    p {
+        line-height: 1.34rem;
+    }
     h1 {
         font-size: 4rem;
     }
@@ -52,16 +55,18 @@ a, p, h1, h2, h3 {
             }
 
         .menu {
-            height: 70rem;
+            height: 90vh;
             display: flex;
             align-items: center;
         }
             .menu ul {
-                margin-left: 50%;
                 list-style: none;
+                width: 100%;
             }
             .menu li {
-                padding: 1rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                padding-right: 14%;
             }
             .menu a {
                 font-size: 0.9em;
@@ -96,7 +101,7 @@ a, p, h1, h2, h3 {
             }
             .intro-text {
                 padding-top: 40vh;
-                padding-left: 9rem;
+                padding-left: 10vw;
             }
                 .intro-text-blur {
                     backdrop-filter: blur(23px);
@@ -129,6 +134,7 @@ a, p, h1, h2, h3 {
                 backdrop-filter: blur(23px);
                 border-radius: 10px;
                 height: 24vh;
+                min-height: 11rem;
                 margin: 3vh;
                 margin-top: 0;
             }
