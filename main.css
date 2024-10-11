@@ -8,7 +8,6 @@
 |  $$$$$$/|  $$$$$$/| $$ | $$ | $$| $$ | $$ | $$|  $$$$$$/| $$  | $$
  \______/  \______/ |__/ |__/ |__/|__/ |__/ |__/ \______/ |__/  |__/
 */
-
     body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, button, textarea, p, th, td, a
     {
     margin: 0px;
@@ -51,6 +50,62 @@
 
 
 /*
+ /$$$$$$$                     /$$   /$$          
+| $$__  $$                   | $$  | $$          
+| $$  \ $$ /$$$$$$   /$$$$$$ | $$  | $$  /$$$$$$ 
+| $$$$$$$//$$__  $$ /$$__  $$| $$  | $$ /$$__  $$
+| $$____/| $$  \ $$| $$  \ $$| $$  | $$| $$  \ $$
+| $$     | $$  | $$| $$  | $$| $$  | $$| $$  | $$
+| $$     |  $$$$$$/| $$$$$$$/|  $$$$$$/| $$$$$$$/
+|__/      \______/ | $$____/  \______/ | $$____/ 
+                   | $$                | $$      
+                   | $$                | $$      
+                   |__/                |__/      
+*/
+    .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .popup-content {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup-content p {
+        font-size: 16px;
+        color: #333333;
+    }
+
+    .close-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #312450;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .close-btn:hover {
+        background-color: #312450;
+    }
+
+
+/*
   /$$$$$$  /$$       /$$           /$$                          
  /$$__  $$|__/      | $$          | $$                          
 | $$  \__/ /$$  /$$$$$$$  /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
@@ -60,7 +115,6 @@
 |  $$$$$$/| $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$      
  \______/ |__/ \_______/ \_______/|_______/  \_______/|__/      
 */
-
     .sidebar {
         background: #312450;
         height: 100vh;
@@ -181,7 +235,6 @@
      \__ \  __/ (__| |_| | (_) | | | | | |
      |___/\___|\___|\__|_|\___/|_| |_| |_|
     */
-        
         #whoAmI {
             min-height: 100vh;
         }
@@ -225,6 +278,19 @@
                     justify-content: center;
                     align-items: center;
                 }
+                #message {
+                    margin-top: 1rem;
+                    font-size: 1rem;
+                    font-weight: bold;
+                }
+                /* Successful message */
+                .success {
+                    color: green;
+                }
+                /* Error message */
+                .error {
+                    color: red;
+                }
     
     /*
       _____           _            
@@ -233,7 +299,6 @@
      |  _| (_) | (_) | ||  __/ |   
      |_|  \___/ \___/ \__\___|_|   
     */
-
         #footer {
             background-color: #493382;
             height: 20vh;
@@ -306,7 +371,6 @@
      \__ \  __/ (__| |_| | (_) | | | | | |
      |___/\___|\___|\__|_|\___/|_| |_| |_|
     */
-
         @media screen and (max-width: 1000px) {
             .whoAmI-content {
                 grid-template-columns: repeat(2, 1fr);

@@ -8,7 +8,27 @@
     <title>Christoffer's little hideout</title>
 </head>
 <body>
-    <!--https://patorjk.com/software/taag/#p=display&f=Big%20Money-ne
+<!--https://patorjk.com/software/taag/#p=display&f=Big%20Money-ne
+ /$$$$$$$                     /$$   /$$          
+| $$__  $$                   | $$  | $$          
+| $$  \ $$ /$$$$$$   /$$$$$$ | $$  | $$  /$$$$$$ 
+| $$$$$$$//$$__  $$ /$$__  $$| $$  | $$ /$$__  $$
+| $$____/| $$  \ $$| $$  \ $$| $$  | $$| $$  \ $$
+| $$     | $$  | $$| $$  | $$| $$  | $$| $$  | $$
+| $$     |  $$$$$$/| $$$$$$$/|  $$$$$$/| $$$$$$$/
+|__/      \______/ | $$____/  \______/ | $$____/ 
+                   | $$                | $$      
+                   | $$                | $$      
+                   |__/                |__/      
+-->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>Wait, what are you doing here?? This website isn't nearly finished.</p>
+                <button class="close-btn" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+    <!--
   /$$$$$$  /$$       /$$           /$$                          
  /$$__  $$|__/      | $$          | $$                          
 | $$  \__/ /$$  /$$$$$$$  /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
@@ -83,7 +103,10 @@
                             </div>
                         </div>
                         <div class="whoAmI-content">
-                            <div></div>
+                            <div>
+                                <button id="apiButton">Test button, preferably dont click</button>
+                                <p id="message"></p>
+                            </div>
                             <div></div>
                             <div></div>
                             <div></div>

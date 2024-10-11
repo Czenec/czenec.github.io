@@ -8,10 +8,40 @@
     <title>Christoffer's little hideout</title>
 </head>
 <body>
-    <!-- Sidebar -->
-        <div class="sidebar">
+<!--https://patorjk.com/software/taag/#p=display&f=Big%20Money-ne
+ /$$$$$$$                     /$$   /$$          
+| $$__  $$                   | $$  | $$          
+| $$  \ $$ /$$$$$$   /$$$$$$ | $$  | $$  /$$$$$$ 
+| $$$$$$$//$$__  $$ /$$__  $$| $$  | $$ /$$__  $$
+| $$____/| $$  \ $$| $$  \ $$| $$  | $$| $$  \ $$
+| $$     | $$  | $$| $$  | $$| $$  | $$| $$  | $$
+| $$     |  $$$$$$/| $$$$$$$/|  $$$$$$/| $$$$$$$/
+|__/      \______/ | $$____/  \______/ | $$____/ 
+                   | $$                | $$      
+                   | $$                | $$      
+                   |__/                |__/      
+-->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>Wait, what are you doing here?? This website isn't nearly finished.</p>
+                <button class="close-btn" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+
+    <!--
+  /$$$$$$  /$$       /$$           /$$                          
+ /$$__  $$|__/      | $$          | $$                          
+| $$  \__/ /$$  /$$$$$$$  /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+|  $$$$$$ | $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$
+ \____  $$| $$| $$  | $$| $$$$$$$$| $$  \ $$  /$$$$$$$| $$  \__/
+ /$$  \ $$| $$| $$  | $$| $$_____/| $$  | $$ /$$__  $$| $$      
+|  $$$$$$/| $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$      
+ \______/ |__/ \_______/ \_______/|_______/  \_______/|__/      
+    -->
+        <div class="sidebar" id="sidebar">
+            <button class="toggle-button" onclick="toggleSidebar()">☰</button>
             <div class="language">
-                <a href="indexEnglish.html">English</a>
+                <a href="index.html">Norsk</a>
             </div>
             <div class="menu">
                 <ul>
@@ -21,12 +51,27 @@
             </div>
         </div>
     
-    <!-- Content -->
+    <!--
+  /$$$$$$                        /$$                           /$$    
+ /$$__  $$                      | $$                          | $$    
+| $$  \__/  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$$  /$$$$$$  
+| $$       /$$__  $$| $$__  $$|_  $$_/   /$$__  $$| $$__  $$|_  $$_/  
+| $$      | $$  \ $$| $$  \ $$  | $$    | $$$$$$$$| $$  \ $$  | $$    
+| $$    $$| $$  | $$| $$  | $$  | $$ /$$| $$_____/| $$  | $$  | $$ /$$
+|  $$$$$$/|  $$$$$$/| $$  | $$  |  $$$$/|  $$$$$$$| $$  | $$  |  $$$$/
+ \______/  \______/ |__/  |__/   \___/   \_______/|__/  |__/   \___/  
+    -->
         <div class="content-container">
             <div class="content-spacer"></div>
             <div class="content">
 
-                <!-- Intro -->
+                <!--
+                  ___       _ https://patorjk.com/software/taag/#p=display&f=Standard
+                 |_ _|_ __ | |_ _ __ ___  
+                  | || '_ \| __| '__/ _ \ 
+                  | || | | | |_| | | (_) |
+                 |___|_| |_|\__|_|  \___/ 
+                -->
                     <section id="intro">
                         <img class="intro-background" src="assets/images/intro.jpg">
                         <div class="intro-text">
@@ -38,7 +83,14 @@
                         </div>
                     </section>
                 
-                <!-- Hvem er jeg -->
+                <!--
+                  _   _                                     _            
+                 | | | |_   _____ _ __ ___     ___ _ __    (_) ___  __ _ 
+                 | |_| \ \ / / _ \ '_ ` _ \   / _ \ '__|   | |/ _ \/ _` |
+                 |  _  |\ V /  __/ | | | | | |  __/ |      | |  __/ (_| |
+                 |_| |_| \_/ \___|_| |_| |_|  \___|_|     _/ |\___|\__, |
+                                                         |__/      |___/ 
+                -->
                     <section id="whoAmI">
                         <div class="whoAmI-spacer"></div>
                         <div class="whoAmI-head">
@@ -49,10 +101,26 @@
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi neque exercitationem perspiciatis deserunt dignissimos omnis fugiat laboriosam dolorum distinctio dolorem ab deleniti quae, sed, officia enim ea est sequi cupiditate!</p>
                             </div>
                         </div>
-                        <div class="whoAmI-content"></div>
+                        <div class="whoAmI-content">
+                            <div>
+                                <button id="apiButton">Test button, preferably dont click</button>
+                                <p id="message"></p>
+                            </div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </section>
 
-                <!-- Footer -->
+                <!--
+                  _____           _            
+                 |  ___|__   ___ | |_ ___ _ __ 
+                 | |_ / _ \ / _ \| __/ _ \ '__|
+                 |  _| (_) | (_) | ||  __/ |   
+                 |_|  \___/ \___/ \__\___|_|   
+                -->
                     <section id="footer">
                         <div></div>
                     </section>
