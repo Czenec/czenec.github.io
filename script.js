@@ -20,7 +20,7 @@ document.getElementById("apiButton").addEventListener("click", function() {
     document.getElementById("message").textContent = "";
     
     // Send a GET request with the ngrok-skip-browser-warning header
-    fetch('https://3060-130-61-69-12.ngrok-free.app/scripts/1', {
+    fetch('https://d3ff-130-61-69-12.ngrok-free.app/scripts/1', {
         method: 'GET',
         headers: {
             'ngrok-skip-browser-warning': '69420' // Required header for ngrok
