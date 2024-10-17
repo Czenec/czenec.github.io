@@ -15,12 +15,25 @@ function toggleSidebar() {
 }
 
 
+let isRequestAllowed = true;  // Flag to check if a request is allowed
+const cooldownTime = 10000;   // 10 seconds in milliseconds
+
 document.getElementById("apiButton").addEventListener("click", function() {
+    if (!isRequestAllowed) {
+        // If the request is not allowed, show a message and return
+        document.getElementById("message").textContent = "Please wait 10 seconds before sending another request!";
+        document.getElementById("message").className = "error";
+        return;
+    }
+
     // Clear any previous message
     document.getElementById("message").textContent = "";
-    
+
+    // Disable sending new requests for 10 seconds
+    isRequestAllowed = false;
+
     // Send a GET request with the ngrok-skip-browser-warning header
-    fetch('https://nice-regularly-ladybird.ngrok-free.app/scripts/2', {
+    fetch('https://nice-regularly-ladybird.ngrok-free.app/scripts/1', {
         method: 'GET',
         headers: {
             'ngrok-skip-browser-warning': '69420' // Required header for ngrok
@@ -43,5 +56,11 @@ document.getElementById("apiButton").addEventListener("click", function() {
         // Display error message
         document.getElementById("message").textContent = "Request Failed!";
         document.getElementById("message").className = "error";
+    })
+    .finally(() => {
+        // Re-enable sending requests after 10 seconds
+        setTimeout(() => {
+            isRequestAllowed = true;
+        }, cooldownTime);
     });
 });
