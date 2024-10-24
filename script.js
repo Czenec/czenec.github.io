@@ -1,3 +1,16 @@
+// https://patorjk.com/software/taag/#p=display&f=Big%20Money-ne
+//  /$$$$$$$                     /$$   /$$          
+// | $$__  $$                   | $$  | $$          
+// | $$  \ $$ /$$$$$$   /$$$$$$ | $$  | $$  /$$$$$$ 
+// | $$$$$$$//$$__  $$ /$$__  $$| $$  | $$ /$$__  $$
+// | $$____/| $$  \ $$| $$  \ $$| $$  | $$| $$  \ $$
+// | $$     | $$  | $$| $$  | $$| $$  | $$| $$  | $$
+// | $$     |  $$$$$$/| $$$$$$$/|  $$$$$$/| $$$$$$$/
+// |__/      \______/ | $$____/  \______/ | $$____/ 
+//                    | $$                | $$      
+//                    | $$                | $$      
+//                    |__/                |__/      
+
 window.onload = function() {
     // Show the pop-up when the page is first loaded
     document.getElementById("popup").style.display = "flex";
@@ -9,11 +22,37 @@ function closePopup() {
 }
 
 
+//   /$$$$$$  /$$       /$$           /$$                          
+//  /$$__  $$|__/      | $$          | $$                          
+// | $$  \__/ /$$  /$$$$$$$  /$$$$$$ | $$$$$$$   /$$$$$$   /$$$$$$ 
+// |  $$$$$$ | $$ /$$__  $$ /$$__  $$| $$__  $$ |____  $$ /$$__  $$
+//  \____  $$| $$| $$  | $$| $$$$$$$$| $$  \ $$  /$$$$$$$| $$  \__/
+//  /$$  \ $$| $$| $$  | $$| $$_____/| $$  | $$ /$$__  $$| $$      
+// |  $$$$$$/| $$|  $$$$$$$|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$      
+//  \______/ |__/ \_______/ \_______/|_______/  \_______/|__/      
+
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('active');
 }
 
+
+//   /$$$$$$                        /$$                           /$$    
+//  /$$__  $$                      | $$                          | $$    
+// | $$  \__/  /$$$$$$  /$$$$$$$  /$$$$$$    /$$$$$$  /$$$$$$$  /$$$$$$  
+// | $$       /$$__  $$| $$__  $$|_  $$_/   /$$__  $$| $$__  $$|_  $$_/  
+// | $$      | $$  \ $$| $$  \ $$  | $$    | $$$$$$$$| $$  \ $$  | $$    
+// | $$    $$| $$  | $$| $$  | $$  | $$ /$$| $$_____/| $$  | $$  | $$ /$$
+// |  $$$$$$/|  $$$$$$/| $$  | $$  |  $$$$/|  $$$$$$$| $$  | $$  |  $$$$/
+//  \______/  \______/ |__/  |__/   \___/   \_______/|__/  |__/   \___/  
+
+
+//                   _   _                                     _            
+//                  | | | |_   _____ _ __ ___     ___ _ __    (_) ___  __ _ 
+//                  | |_| \ \ / / _ \ '_ ` _ \   / _ \ '__|   | |/ _ \/ _` |
+//                  |  _  |\ V /  __/ | | | | | |  __/ |      | |  __/ (_| |
+//                  |_| |_| \_/ \___|_| |_| |_|  \___|_|     _/ |\___|\__, |
+//                                                          |__/      |___/ 
 
 let isRequestAllowed = true;  // Flag to check if a request is allowed
 const cooldownTime = 10000;   // 10 seconds in milliseconds
@@ -64,3 +103,50 @@ document.getElementById("apiButton").addEventListener("click", function() {
         }, cooldownTime);
     });
 });
+
+
+document.getElementById('colorInput').addEventListener('input', function() {
+    const color = this.value;
+    const rgb = hexToRgb(color);
+    const xyBrightness = rgbToXyBrightness(rgb.r, rgb.g, rgb.b);
+
+    // Update x, y, and brightness
+    document.getElementById('xValue').textContent = xyBrightness.x.toFixed(4);
+    document.getElementById('yValue').textContent = xyBrightness.y.toFixed(4);
+    document.getElementById('brightnessValue').textContent = xyBrightness.brightness.toFixed(2);
+});
+
+// Convert HEX to RGB
+function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return { r, g, b };
+}
+
+// Convert RGB to XY and Brightness
+function rgbToXyBrightness(r, g, b) {
+    // Normalize RGB values
+    let red = r / 255;
+    let green = g / 255;
+    let blue = b / 255;
+
+    // Apply gamma correction to RGB
+    red = (red > 0.04045) ? Math.pow((red + 0.055) / 1.055, 2.4) : red / 12.92;
+    green = (green > 0.04045) ? Math.pow((green + 0.055) / 1.055, 2.4) : green / 12.92;
+    blue = (blue > 0.04045) ? Math.pow((blue + 0.055) / 1.055, 2.4) : blue / 12.92;
+
+    // Convert RGB to XYZ
+    const X = red * 0.4124 + green * 0.3576 + blue * 0.1805;
+    const Y = red * 0.2126 + green * 0.7152 + blue * 0.0722;
+    const Z = red * 0.0193 + green * 0.1192 + blue * 0.9505;
+
+    // Convert XYZ to x and y
+    const x = X / (X + Y + Z);
+    const y = Y / (X + Y + Z);
+
+    // Brightness is represented by Y (luminance)
+    const brightness = Y;
+
+    return { x, y, brightness };
+}

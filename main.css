@@ -25,7 +25,7 @@
         border: 0;
     }
 
-    a, p, h1, h2, h3 {
+    a, p, h1, h2, h3, button {
         color:azure
     }
         a {
@@ -38,13 +38,18 @@
         h1 {
             font-size: 4rem;
         }
+        button {
+            font-size: 1.03rem;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+        }
 
     /* Blur */
     .intro-text-blur, .whoAmI-head {
         backdrop-filter: blur(23px);
     }
     /*border-radius*/
-    .whoAmI-content, .toggle-button, .intro-text-blur, .whoAmI-head {
+    .whoAmI-content, .toggle-button, .intro-text-blur, .whoAmI-head, .whoAmI-content-div, #apiButton, #apiColorButton {
         border-radius: 10px;
     }
 
@@ -273,24 +278,52 @@
                 grid-template-columns: repeat(3, 1fr);
                 grid-template-rows: repeat(2, 1fr);
             }
-                .whoAmI-content div {
+                .whoAmI-content-div {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+                    flex-direction: column;
                 }
-                #message {
-                    margin-top: 1rem;
-                    font-size: 1rem;
-                    font-weight: bold;
-                }
-                /* Successful message */
-                .success {
-                    color: green;
-                }
-                /* Error message */
-                .error {
-                    color: red;
-                }
+                    .whoAmI-content-div-apiButton {
+                        margin-bottom: 10%;
+                    }
+                        #apiButton {
+                            background-image: linear-gradient(45deg, #2816ff, #ccad00);
+                        }
+                        #message {
+                            margin-top: 1rem;
+                            font-size: 1rem;
+                            font-weight: bold;
+                        }
+                        /* Successful message */
+                        .success {
+                            color: green;
+                        }
+                        /* Error message */
+                        .error {
+                            color: red;
+                        }
+
+                    .whoAmI-content-div-apiColor {
+                        /*
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        */
+                    }
+                    .whoAmI-content-div-apiColor-selector {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                        #colorInput {
+                            margin-right: 1rem;
+                        }
+                        #apiColorButton {
+                            background-image: linear-gradient(45deg, #f716ff, #b00000);
+                        }
+
     
     /*
       _____           _            
