@@ -150,3 +150,42 @@ function rgbToXyBrightness(r, g, b) {
 
     return { x, y, brightness };
 }
+
+
+document.getElementById('apiColorButton').addEventListener('click', function () {
+    // Get x, y, and brightness values
+    const x = (document.getElementById('xValue').textContent) * 10000;
+    const y = (document.getElementById('yValue').textContent) * 10000;
+    const brightness = (document.getElementById('brightnessValue').textContent) * 255;
+
+    // Clear any previous message
+    document.getElementById("message").textContent = "";
+
+    // Send a POST request with the x, y, and brightness values
+    fetch('https://nice-regularly-ladybird.ngrok-free.app/Set-LightColor', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': '69420' // Required header for ngrok
+        },
+        body: JSON.stringify({ x: x, y: y, brightness: brightness })
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json(); // Parse the response as JSON
+        }
+        throw new Error('Network response was not ok');
+    })
+    .then(data => {
+        console.log('API Request Successful:', data);
+        // Display success message
+        document.getElementById("message").textContent = "Request Successful!";
+        document.getElementById("message").className = "success";
+    })
+    .catch(error => {
+        console.error('There was a problem with the API request:', error);
+        // Display error message
+        document.getElementById("message").textContent = "Request Failed!";
+        document.getElementById("message").className = "error";
+    });
+});

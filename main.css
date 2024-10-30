@@ -305,13 +305,11 @@
                             color: red;
                         }
 
-                    .whoAmI-content-div-apiColor {
-                        /*
+                    /*.whoAmI-content-div-apiColor {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        */
-                    }
+                    }*/
                     .whoAmI-content-div-apiColor-selector {
                         display: flex;
                         justify-content: center;
